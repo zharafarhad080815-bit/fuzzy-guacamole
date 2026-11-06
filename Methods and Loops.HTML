@@ -1,0 +1,35 @@
+<!--Tinu wants a web page that lists numbers, picks a random number and shows what day it is. You will build it with a loop and two methods. Time: about 20 minutes.-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Methods and Loops</title>
+    </head>
+    <body>
+        <h1 id="methods-loops">Methods and Loops</h1>
+        <p>This activity demonstrates the use of loops and methods in JavaScript.</p>
+        <p id="result"></p>
+        <script>
+            // Generate a list of numbers from 1 to 10
+            let numbers = [];
+            for (let i = 1; i <= 10; i++) {
+                numbers.push(i);
+            }
+
+            // Pick a random number from the list
+            let randomIndex = Math.floor(Math.random() * numbers.length);
+            let randomNumber = numbers[randomIndex];
+
+            // Determine the day of the week based on the random number
+            let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let dayName = daysOfWeek[randomNumber % 7]; // Use modulo to wrap around the days
+
+            // Display the results
+            document.getElementById("result").innerHTML = 
+                "List of Numbers: " + numbers.join(", ") + "<br>" +
+                "Random Number: " + randomNumber + "<br>" +
+                "Day of the Week: " + dayName;
+        </script>
+    </body>
+</html>
